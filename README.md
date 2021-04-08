@@ -13,7 +13,7 @@ or add ```-c``` flag to clean junk files after run:
 ```./create_img.sh -c```  
 
 ## Installing acpi_override.img  
-Copy the file to ```/boot``` first  
+Copy the file to ```/boot``` first:  
 ```sudo cp acpi_override.img /boot```
 ### GRUB
 - **NOTICE:** Currently works only if you manage your GRUB config file manually (changes will not survive GRUB update)  

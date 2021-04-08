@@ -1,6 +1,8 @@
 # Thinkpad E14 Fn Keys Fix  
 ## Intro
-**NOTICE: THIS CURRENTLY WORKS WITH 
+**NOTICE: This currently does NOT work with automatically generated GRUB config file  
+Please use the linked script bellow or create PR as I don't use GRUB at all.**  
+
 I wrote this script as a more universal way of fixing Fn keys on Thinkpad E14 gen. 2.  
 Please note that there is an another [script](https://github.com/masksshow/Thinkpad-E14-15-AMD-Gen-2-FIX), but it only works with GRUB and touches system (which I don't like)
 
@@ -14,12 +16,12 @@ Copy the file to ```/boot``` first
 ### GRUB
 - **Currently works only if you manage your GRUB config file manually**  
 - Edit ```/boot/grub/grub.cfg```
-    ```
+    <pre>
     ...
     echo 'Loading initial ramdisk'
-    initrd	/boot/acpi_override.img /boot/initramfs-linux.img
+    initrd <b>/boot/acpi_override.img</b> /boot/initramfs-linux.img
     ...
-    ```
+    </pre>
 ###  Refind  
 - If you use ```/boot/refind_linux.conf```:  
     - Add ```initrd=\boot\acpi_override.img``` (notice backslashes) as the **first** ```initrd``` option:  

@@ -26,10 +26,10 @@ Copy the file to ```/boot``` first:
     </pre>
 ###  Refind  
 - If you use ```/boot/refind_linux.conf```:  
-    - Add ```initrd=\boot\acpi_override.img``` (notice backslashes) as the **first** ```initrd``` option:  
+    - Add ```initrd=\boot\acpi_override.img``` (**notice backslashes**) as the **first** ```initrd``` option:  
         <pre>"Some name" "<... splash <b>initrd=\boot\acpi_override.img</b> initrd=\boot\initrd.img-%v-generic"</pre>
 - If you use ```refind.conf``` (```/boot/EFI/BOOT/refind.conf```)   
-    - Add ```initrd=\boot\acpi_override.img``` (notice backslashes) at the end of the options:  
+    - Add ```initrd=\boot\acpi_override.img``` (**notice backslashes**) at the end of the options:  
         <pre>
         menuentry "Arch Linux" {
             icon     /EFI/refind/icons/os_arch.png

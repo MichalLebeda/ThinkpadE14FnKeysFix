@@ -22,8 +22,7 @@ Copy the file to ```/boot``` first:
     ...
     echo 'Loading initial ramdisk'
     initrd <b>/boot/acpi_override.img</b> /boot/initramfs-linux.img
-    ...
-    </pre>
+    ...</pre>
 ###  Refind  
 - If you use ```/boot/refind_linux.conf```:  
     - Add ```initrd=\boot\acpi_override.img``` (**notice backslashes**) as the **first** ```initrd``` option:  

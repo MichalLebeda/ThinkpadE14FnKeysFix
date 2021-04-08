@@ -5,7 +5,7 @@ Please note that there is an another [script](https://github.com/masksshow/Think
 
 ## Run  
 Run script to generate acpi_override.img:  
-```./script.sh```  
+```./create_img.sh```  
 
 ## Installing acpi_override.img  
 Copy the file to ```/boot``` first

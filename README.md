@@ -1,9 +1,9 @@
-# Thinkpad E14 Fn Keys Fix  
+# Thinkpad E14 Gen 2 Fn Keys Fix  
 ## Intro
 **NOTICE:** This currently does **NOT work** with **automatically generated GRUB config** file (changes will not survive GRUB update)  
 Please use the linked script bellow or create PR as I don't use GRUB at all.   
 
-I wrote this script as a more universal way of fixing Fn keys on Thinkpad E14 gen. 2.  
+I wrote this script as a more universal way of fixing Fn keys on Thinkpad E14 gen 2.  
 Please note that there is an another [script](https://github.com/masksshow/Thinkpad-E14-15-AMD-Gen-2-FIX), but it only works with GRUB and touches system (which I don't like)
 
 ## Run  

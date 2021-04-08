@@ -9,6 +9,8 @@ Please note that there is an another [script](https://github.com/masksshow/Think
 ## Run  
 Run script to generate ```acpi_override.img```:  
 ```./create_img.sh```  
+or add ```-c``` flag to clean junk files after run:  
+```./create_img.sh -c```  
 
 ## Installing acpi_override.img  
 Copy the file to ```/boot``` first

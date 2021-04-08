@@ -1,0 +1,5 @@
+/kernel
+*.dsl
+*.aml
+*.hex
+*.img

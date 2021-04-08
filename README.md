@@ -7,14 +7,14 @@ I wrote this script as a more universal way of fixing Fn keys on Thinkpad E14 ge
 Please note that there is an another [script](https://github.com/masksshow/Thinkpad-E14-15-AMD-Gen-2-FIX), but it only works with GRUB and touches system (which I don't like)
 
 ## Run  
-Run script to generate acpi_override.img:  
+Run script to generate ```acpi_override.img```:  
 ```./create_img.sh```  
 
 ## Installing acpi_override.img  
 Copy the file to ```/boot``` first
 ```sudo cp acpi_override.img /boot```
 ### GRUB
-- **Currently works only if you manage your GRUB config file manually**  
+- **NOTICE:** Currently works only if you manage your GRUB config file manually (changes will not survive GRUB update)  
 - Edit ```/boot/grub/grub.cfg```
     <pre>
     ...

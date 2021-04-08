@@ -12,22 +12,22 @@ Please note that there is an another [script](https://github.com/masksshow/Think
     - Example: <pre>"Boot with ACPI override" "<... splash <b>initrd=\boot\acpi_override.img</b> initrd=\boot\initrd.img-%v-generic"</pre>
 - If you use ```refind.conf``` (```/boot/EFI/BOOT/refind.conf```)   
     - Add ```initrd=\boot\acpi_override.img``` (notice backslashes) at the end of the options:  
-<pre>
-menuentry "Arch Linux" {
-    icon     /EFI/refind/icons/os_arch.png
-    volume   "Arch Linux"
-    loader   /boot/vmlinuz-linux
-    initrd   /boot/initramfs-linux.img
-    options  "root=PARTUUID=5028fa50-0079-4c40-b240-abfaf28693ea rw add_efi_memmap <b>initrd=\boot\acpi_override.img</b>"
-    submenuentry "Boot using fallback initramfs" {
-        initrd /boot/initramfs-linux-fallback.img
-    }
-    submenuentry "Boot to terminal" {
-        add_options "systemd.unit=multi-user.target"
-    }
-    disabled
-}
-</pre>
+        <pre>
+        menuentry "Arch Linux" {
+            icon     /EFI/refind/icons/os_arch.png
+            volume   "Arch Linux"
+            loader   /boot/vmlinuz-linux
+            initrd   /boot/initramfs-linux.img
+            options  "root=PARTUUID=5028fa50-0079-4c40-b240-abfaf28693ea rw add_efi_memmap <b>initrd=\boot\acpi_override.img</b>"
+            submenuentry "Boot using fallback initramfs" {
+                initrd /boot/initramfs-linux-fallback.img
+            }
+            submenuentry "Boot to terminal" {
+                add_options "systemd.unit=multi-user.target"
+            }
+            disabled
+        }
+        </pre>
 
 
 # Resources

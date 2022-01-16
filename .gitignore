@@ -3,3 +3,6 @@
 *.aml
 *.hex
 *.img
+acpi_override
+acpidump
+dsdt.asm

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-ORIGINAL_TABLE="original.aml"
+ACPIDUMP="acpidump"
 DECOMPILED_PREFIX="decompiled"
+ORIGINAL_TABLE="dsdt.dat"
 DECOMPILED_TABLE="$DECOMPILED_PREFIX.dsl"
 FIXED_DECOMPILED_TABLE="fixed.dsl"
 RECOMPILED_PREFIX="recompiled"
@@ -20,7 +21,8 @@ cd "$(dirname "$0")"
 
 echo "INFO: Root access is needed in order to dump DSDT table."
 echo "READ the script's source!"
-sudo cat /sys/firmware/acpi/tables/DSDT > "$ORIGINAL_TABLE" || { echo "Could not dump DSDT table" ;  exit 1; }
+sudo acpidump > "$ACPIDUMP" || { echo "Could not dump DSDT table" ;  exit 1; }
+acpixtract "$ACPIDUMP" || { echo "Could extract DSDT table" ;  exit 1; }
 
 echo "Decompiling $ORIGINAL_TABLE into $DECOMPILED_TABLE:"
 iasl -p "$DECOMPILED_PREFIX" -d "$ORIGINAL_TABLE" || { echo "Could decompile DSDT table" ;  exit 2; }
@@ -71,7 +73,7 @@ else
 fi
 
 echo "Recompiling table:"
-iasl -ve -tc -p "$RECOMPILED_PREFIX" "$FIXED_DECOMPILED_TABLE"
+iasl -ve -p "$RECOMPILED_PREFIX" "$FIXED_DECOMPILED_TABLE"
 
 echo "Creating $FINAL_IMAGE"
 mkdir -p kernel/firmware/acpi
@@ -86,6 +88,8 @@ if [[ "$*" = *c* ]]; then
     rm "$FIXED_DECOMPILED_TABLE"
     rm "$RECOMPILED_TABLE"
     rm "$RECOMPILED_PREFIX.hex"
+    rm *.dat
+    rm acpidump
     rm -rf kernel
 else
     echo 'Keeping files'
